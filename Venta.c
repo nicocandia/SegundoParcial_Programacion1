@@ -39,7 +39,7 @@ int Venta_setIdVenta(Venta* this,char* idVenta)
 {
     int retorno=-1;
     int idventaAux;
-    if(this!=NULL && !verificarArregloSoloNumeros(idVenta))
+    if(this!=NULL && !isvalidIDventa(idVenta))
     {
         idventaAux=atoi(idVenta);
         this->idVenta=idventaAux;
@@ -62,7 +62,7 @@ int Venta_getIdVenta(Venta* this,int* idVenta)
 int Venta_setFechaVenta(Venta* this,char* fechaVenta)
 {
     int retorno=-1;
-    if(this!=NULL && fechaVenta!=NULL)
+    if(this!=NULL && !isvalidFecha(fechaVenta))
     {
         strcpy(this->fechaVenta,fechaVenta);
         retorno=0;
@@ -107,7 +107,7 @@ int Venta_setCantidad(Venta* this,char* cantidad)
 {
     int retorno=-1;
     int cantidadAux;
-    if(this!=NULL && !verificarArregloSoloNumeros(cantidad))
+    if(this!=NULL && !isvalidCantidad(cantidad))
     {
         cantidadAux=atoi(cantidad);
         this->cantidad=cantidadAux;
@@ -131,7 +131,7 @@ int Venta_setPrecioUnitario(Venta* this,char* precioUnitario)
 {
     int retorno=-1;
     float precioUnitarioAux;
-    if(this!=NULL && !verificarArreglosoloFlotantes(precioUnitario))
+    if(this!=NULL && !isvalidPrecio(precioUnitario))
     {
         precioUnitarioAux=atof(precioUnitario);
         this->precioUnitario=precioUnitarioAux;
@@ -154,7 +154,7 @@ int Venta_getPrecioUnitario(Venta* this,float* precioUnitario)
 int Venta_setCuitCliente(Venta* this,char* cuitCliente)
 {
     int retorno=-1;
-    if(this!=NULL && !verificarCuitoCuil(cuitCliente))
+    if(this!=NULL && !isvalidCuil(cuitCliente))
     {
         strcpy(this->cuitCliente,cuitCliente);
         retorno=0;
@@ -230,4 +230,71 @@ int cantidadtvlcdVendidas(void*element)
     }
     return retorno;
 }
+
+int isvalidIDventa(char* id)
+{
+   int retorno=-1;
+   int idaux;
+   if(!verificarArregloSoloNumeros(id))
+   {
+        idaux=atoi(id);
+        if(idaux>=0)
+        {
+            retorno=0;
+        }
+   }
+   return retorno;
+}
+
+int isvalidCantidad(char* cantidad)
+{
+   int retorno=-1;
+   int cantidadAux;
+   if(!verificarArregloSoloNumeros(cantidad))
+   {
+        cantidadAux=atoi(cantidad);
+        if(cantidadAux>=0)
+        {
+            retorno=0;
+        }
+   }
+   return retorno;
+}
+
+int isvalidPrecio(char* precio)
+{
+   int retorno=-1;
+   float precioAux;
+   if(!verificarArreglosoloFlotantes(precio))
+   {
+        precioAux=atof(precio);
+        if(precioAux>=0)
+        {
+            retorno=0;
+        }
+   }
+   return retorno;
+}
+
+int isvalidCuil(char* cuil)
+{
+   int retorno=-1;
+   if(!verificarCuitoCuil(cuil))
+   {
+        retorno=0;
+   }
+   return retorno;
+}
+
+int isvalidFecha(char*fecha)
+{
+    int retorno=-1;
+    if(!verificarfecha(fecha))
+    {
+        retorno=0;
+    }
+    return retorno;
+}
+
+
 

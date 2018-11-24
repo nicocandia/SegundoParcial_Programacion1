@@ -39,4 +39,10 @@ int venta_montoMayor_a2000(void*element);
 int venta_montoMayor_a10000(void*element);
 int cantidadtvlcdVendidas(void*element);
 
+int isvalidIDventa(char* id);
+int isvalidCantidad(char* cantidad);
+int isvalidPrecio(char* precio);
+int isvalidCuil(char* cuil);
+int isvalidFecha(char*fecha);
+
 #endif // VENTA_H_INCLUDED

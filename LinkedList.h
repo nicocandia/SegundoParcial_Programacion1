@@ -22,18 +22,20 @@ struct Node
 {
     void* pElement;
     struct Node* pNextNode;
+    struct Node* pPreviousNode;
     int indice;
 }typedef Node;
 
 struct LinkedList
 {
     Node* pFirstNode;
-    Node*nodeIterator;
+    Node* pLastNode;
+    Node* nodeIterator;
     int size;
 }typedef LinkedList;
 #endif
 
-
+//una forma mas rapida de hacer el iterator
 
 //Publicas
 LinkedList* ll_newLinkedList(void);
@@ -58,6 +60,6 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
 LinkedList* ll_filter(LinkedList*this,int (*pFunc)(void*));
 LinkedList* ll_filterVersion2(LinkedList*this,int (*pFunc)(void*,int entero),int numero);
 int ll_map(LinkedList* this, void (*pFunc)(void*));
-Node* ll_startIterator(LinkedList* this);
-Node* ll_getNextIterator(LinkedList* this);
+void ll_startIterator(LinkedList* this);
+void ll_getNextIterator(LinkedList* this);
 int ll_count (LinkedList* this,int (*fn)(void*element));

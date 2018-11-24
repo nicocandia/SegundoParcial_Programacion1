@@ -557,3 +557,32 @@ int verificarNumeroCelular(char *pArreglo)
     else {retorno =-1;}
     return retorno;
 }
+
+int verificarfecha(char*arreglo)
+{
+    int retorno;
+    int i=0;
+    int contadorBarra=0;
+    char auxiliar=arreglo[i];
+    while(auxiliar!='\0')
+        {
+            if(!((auxiliar>='0' && auxiliar<='9')|| auxiliar=='/'))
+                {
+                    retorno=-1;
+                    break;
+                }
+                 if(auxiliar=='/')
+                    {
+                        contadorBarra++;
+                    }
+                i++;
+                auxiliar=arreglo[i];
+            }
+    if( contadorBarra==2 && (arreglo[0]>='0' && arreglo[1]<='3') && arreglo[2]=='/' &&
+        (arreglo[3]>='0' && arreglo[3]<='1') && arreglo[4]>='0' &&
+          arreglo[5]=='/' && arreglo[6]>='0' && arreglo[7]>='0' && arreglo[8]>='0' && arreglo[9]>='0' )
+        {
+            retorno=0;
+        }
+    return retorno;
+}

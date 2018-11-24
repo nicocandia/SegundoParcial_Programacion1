@@ -3,6 +3,8 @@
 #include "LinkedList.h"
 #include "Parser.h"
 #include "Generador.h"
+#include "Funciones.h"
+
 
 int main()
 {

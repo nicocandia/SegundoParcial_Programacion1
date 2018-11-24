@@ -49,4 +49,6 @@ int utn_getPassword(char *pBuffer,int limite,int reintentos,char* msj,char*msjEr
 
 int utn_getNumeroTelefono(char *pBuffer,int limite,int reintentos,char* msj,char*msjError);
 
+int verificarfecha(char*arreglo);
+
 #endif // FUNCIONES_H_INCLUDED

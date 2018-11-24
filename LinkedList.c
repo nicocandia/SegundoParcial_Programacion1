@@ -596,39 +596,31 @@ LinkedList* ll_filter(LinkedList*this,int (*pFunc)(void*))
     return newList;
 }
 
-Node* ll_startIterator(LinkedList* this)
+void ll_startIterator(LinkedList* this)
 {
-    Node*retorno=NULL;
     if(this != NULL)
     {
         this->nodeIterator=this->pFirstNode;
-        retorno=this->nodeIterator;
     }
-    return retorno;
 }
 
-Node* ll_getNextIterator(LinkedList* this)
+void ll_getNextIterator(LinkedList* this)
 {
-    Node* retorno=NULL;
     if(this->nodeIterator != NULL)
     {
         this->nodeIterator=(this->nodeIterator)->pNextNode;
-        retorno=this->nodeIterator;
     }
-    return retorno;
 }
 
 int ll_map (LinkedList* this,void (*pFunc)(void*))
 {
     int retorno=-1;
-    Node* nodo;
     if(this != NULL && pFunc != NULL)
     {
-        nodo = ll_startIterator(this);
-        while(nodo!=NULL)
+        while(this->nodeIterator !=NULL)
         {
-            pFunc(nodo->pElement);
-            nodo=ll_getNextIterator(this);
+            pFunc(this->nodeIterator->pElement);
+            ll_getNextIterator(this);
             retorno=0;
         }
     }
@@ -659,17 +651,16 @@ LinkedList* ll_filterVersion2(LinkedList*this,int (*pFunc)(void*,int entero),int
 
 int ll_count (LinkedList* this,int (*fn)(void*element))
 {
-    Node* nodo;
     int acumulador=0;
     int contador;
     if(this != NULL && fn != NULL)
     {
-        nodo = ll_startIterator(this);
-        while(nodo!=NULL)
+        ll_startIterator(this);
+        while(this->nodeIterator!=NULL)
         {
-            contador=fn(nodo->pElement);
+            contador=fn(this->nodeIterator->pElement);
             acumulador=acumulador + contador;
-            nodo=ll_getNextIterator(this);
+            ll_getNextIterator(this);
 
         }
     }
