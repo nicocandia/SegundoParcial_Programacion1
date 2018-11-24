@@ -13,6 +13,7 @@ int generarArchivos(char* fileName,LinkedList* listaVentas)
     if(pFile!=NULL && listaVentas!=NULL && len>0)
     {
         fprintf(pFile,"***************\nInformes de ventas\n***************\n\n");
+        fprintf(pFile,"Cantidad de unidades vendidas totales:%d\n",ll_count(listaVentas,cantidadUnidadesVenta));
         fprintf(pFile,"Cantidad de ventas por un monto mayor a 10000:%d\n",ll_count(listaVentas,venta_montoMayor_a10000));
         fprintf(pFile,"Cantidad de ventas por un monto mayor a 20000:%d\n",ll_count(listaVentas,venta_montoMayor_a2000));
         fprintf(pFile,"Cantidad de tvs LCD vendidas:%d\n\n",ll_count(listaVentas,cantidadtvlcdVendidas));
