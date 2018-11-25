@@ -2,9 +2,9 @@
 Informes de ventas
 ***************
 
-Cantidad de unidades vendidas totales:1358
-Cantidad de ventas por un monto mayor a 10000:194
-Cantidad de ventas por un monto mayor a 20000:148
-Cantidad de tvs LCD vendidas:229
+Cantidad de unidades vendidas totales:634
+Cantidad de ventas por un monto mayor a 10000:90
+Cantidad de ventas por un monto mayor a 20000:69
+Cantidad de tvs LCD vendidas:103
 
 *******************

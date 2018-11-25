@@ -658,7 +658,7 @@ int ll_count (LinkedList* this,int (*fn)(void*element))
         ll_startIterator(this);
         while(this->nodeIterator!=NULL)
         {
-            contador=fn(this->nodeIterator->pElement);
+            contador=fn((this->nodeIterator)->pElement);
             acumulador=acumulador + contador;
             ll_getNextIterator(this);
 

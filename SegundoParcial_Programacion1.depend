@@ -1,50 +1,36 @@
 # depslib dependency file v1.0
-1543067371 source:/home/alumno/Escritorio/SegundoParcial_Programacion1/Funciones.c
+1543163541 source:c:\users\candia family\desktop\segundoparcial_programacion1\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Funciones.h"
 
-1543067371 /home/alumno/Escritorio/SegundoParcial_Programacion1/Funciones.h
+1543163541 c:\users\candia family\desktop\segundoparcial_programacion1\funciones.h
 
-1543067371 source:/home/alumno/Escritorio/SegundoParcial_Programacion1/Generador.c
+1543163541 source:c:\users\candia family\desktop\segundoparcial_programacion1\generador.c
 	<stdio.h>
 	<stdlib.h>
 	"Venta.h"
 	"LinkedList.h"
 
-1543067904 /home/alumno/Escritorio/SegundoParcial_Programacion1/Venta.h
+1543165360 c:\users\candia family\desktop\segundoparcial_programacion1\venta.h
 
-1543069543 /home/alumno/Escritorio/SegundoParcial_Programacion1/LinkedList.h
+1543163541 c:\users\candia family\desktop\segundoparcial_programacion1\linkedlist.h
 
-1543069617 source:/home/alumno/Escritorio/SegundoParcial_Programacion1/LinkedList.c
+1543163541 source:c:\users\candia family\desktop\segundoparcial_programacion1\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"LinkedList.h"
 
-1543067371 source:/home/alumno/Escritorio/SegundoParcial_Programacion1/main.c
+1543165521 source:c:\users\candia family\desktop\segundoparcial_programacion1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Parser.h"
 	"Generador.h"
 
-1543067371 /home/alumno/Escritorio/SegundoParcial_Programacion1/Parser.h
+1543163541 c:\users\candia family\desktop\segundoparcial_programacion1\parser.h
 
-1543067371 /home/alumno/Escritorio/SegundoParcial_Programacion1/Generador.h
-
-1543067371 source:/home/alumno/Escritorio/SegundoParcial_Programacion1/Parser.c
-	"LinkedList.h"
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"Venta.h"
-
-1543069752 source:/home/alumno/Escritorio/SegundoParcial_Programacion1/Venta.c
-	"Funciones.h"
-	"Venta.h"
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
+1543163541 c:\users\candia family\desktop\segundoparcial_programacion1\generador.h
 

@@ -22,20 +22,15 @@ struct Node
 {
     void* pElement;
     struct Node* pNextNode;
-    struct Node* pPreviousNode;
-    int indice;
 }typedef Node;
 
 struct LinkedList
 {
     Node* pFirstNode;
-    Node* pLastNode;
     Node* nodeIterator;
     int size;
 }typedef LinkedList;
 #endif
-
-//una forma mas rapida de hacer el iterator
 
 //Publicas
 LinkedList* ll_newLinkedList(void);

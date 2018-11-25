@@ -26,6 +26,5 @@ int main()
     {
         printf("no se ha cargado el archivo correctamente\n");
     }
-
     return 0;
 }

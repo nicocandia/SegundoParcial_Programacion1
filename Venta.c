@@ -84,7 +84,7 @@ int Venta_getFechaVenta(Venta* this,char* fechaVenta)
 int Venta_setCodigoProducto(Venta* this,char* codigoProducto)
 {
     int retorno=-1;
-    if(this!=NULL && codigoProducto!=NULL)
+    if(this!=NULL && !isvalidProducto(codigoProducto))
     {
         strcpy(this->codigoProducto,codigoProducto);
         retorno=0;
@@ -175,10 +175,12 @@ int Venta_getCuitCliente(Venta* this,char* cuitCliente)
 
 int cantidadUnidadesVenta(void*element)
 {
-    int cantidadVendidas;
-    Venta_getCantidad(element,&cantidadVendidas);
+    int cantidadVendidas=0;
+    if(element!=NULL)
+    {
+        Venta_getCantidad(element,&cantidadVendidas);
+    }
     return cantidadVendidas;
-
 }
 
 int venta_montoMayor_a10000(void*element)
@@ -218,7 +220,7 @@ int venta_montoMayor_a2000(void*element)
 int cantidadtvlcdVendidas(void*element)
 {
     int retorno=0;
-    int cantidad;
+    int cantidad=0;
     char codigoProducto[128];
 
     Venta_getCantidad(element,&cantidad);
@@ -290,6 +292,33 @@ int isvalidFecha(char*fecha)
 {
     int retorno=-1;
     if(!verificarfecha(fecha))
+    {
+        retorno=0;
+    }
+    return retorno;
+}
+
+int isvalidProducto(char*producto)
+{
+   int retorno;
+    int i=0;
+    int contadorguionBajo=0;
+    char auxiliar=producto[i];
+    while(auxiliar!='\0')
+        {
+            if(!((auxiliar>='A' && auxiliar<='Z')||(auxiliar>='0' && auxiliar<='9') || auxiliar=='_'))
+            {
+                retorno=-1;
+                break;
+            }
+            if(auxiliar=='_')
+            {
+                contadorguionBajo++;
+            }
+                i++;
+                auxiliar=producto[i];
+            }
+    if(contadorguionBajo==1)
     {
         retorno=0;
     }

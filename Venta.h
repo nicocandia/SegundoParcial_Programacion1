@@ -44,5 +44,6 @@ int isvalidCantidad(char* cantidad);
 int isvalidPrecio(char* precio);
 int isvalidCuil(char* cuil);
 int isvalidFecha(char*fecha);
+int isvalidProducto(char*producto);
 
 #endif // VENTA_H_INCLUDED
