@@ -3,6 +3,15 @@
 #include "Venta.h"
 #include "LinkedList.h"
 
+/** \brief genera un archivo de texto con los datos de la listaVentas
+ *
+ * \param listaventas LinkedList* Puntero a la lista
+ * \param fileName char* puntero al nombre del archivo
+ * \return int Retorna  (0) Error si no pudo escribir el archivo
+                        ( 1) Si pudo escribir el archivo correctamente
+ *
+ */
+
 int generarArchivos(char* fileName,LinkedList* listaVentas)
 {
     int retorno=0;

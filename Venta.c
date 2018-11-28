@@ -5,6 +5,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+/** \brief crea una nueva venta
+ *
+ * \return Venta* Retorna
+ *
+ */
 Venta* Venta_new()
 {
     Venta* this;
@@ -12,11 +17,28 @@ Venta* Venta_new()
     return this;
 }
 
+/** \brief elimina venta
+ *
+ * \param this Venta* Puntero a venta
+ * \return void
+ */
+
 void Venta_delete(Venta* this)
 {
     free(this);
 }
-
+/** \brief crea una venta nueva con parametros
+ *
+ * \param idventa char* Puntero a idventa
+ * \param fechaventa char* puntero a fechaVenta
+ * \param codigoProducto char* Puntero a codigoProducto
+ * \param cantidad char* puntero a cantidad
+ * \param precioUnitario char* Puntero a precioUnitario
+ * \param cuitCliente char* puntero a cuitCliente
+ * \return Venta* Retorna  (venta) si tomo los datos correctamente
+                        ( NULL) Si salio todo mal
+ *
+ */
 Venta* Venta_newConParametros(char* idVenta,char* fechaVenta,char* codigoProducto,char* cantidad,char* precioUnitario,char* cuitCliente)
 {
     Venta* this;
@@ -34,7 +56,14 @@ Venta* Venta_newConParametros(char* idVenta,char* fechaVenta,char* codigoProduct
     Venta_delete(this);
     return NULL;
 }
-
+/** \brief setea idVenta
+ *
+ * \param this Venta* Puntero a la venta
+ * \param idVenta char* puntero al idventa
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_setIdVenta(Venta* this,char* idVenta)
 {
     int retorno=-1;
@@ -48,6 +77,14 @@ int Venta_setIdVenta(Venta* this,char* idVenta)
     return retorno;
 }
 
+/** \brief obtengo idventa
+ *
+ * \param this Venta* Puntero a la venta
+ * \param idventa char* puntero a idventa
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_getIdVenta(Venta* this,int* idVenta)
 {
     int retorno=-1;
@@ -59,6 +96,14 @@ int Venta_getIdVenta(Venta* this,int* idVenta)
     return retorno;
 }
 
+/** \brief setea fechaventa
+ *
+ * \param this Venta* Puntero a la venta
+ * \param fechaventa char* puntero a fechaventa
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_setFechaVenta(Venta* this,char* fechaVenta)
 {
     int retorno=-1;
@@ -70,6 +115,14 @@ int Venta_setFechaVenta(Venta* this,char* fechaVenta)
     return retorno;
 }
 
+/** \brief obtengo fechaventa
+ *
+ * \param this Venta* Puntero a la venta
+ * \param fechaventa char* puntero a fechaventa
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_getFechaVenta(Venta* this,char* fechaVenta)
 {
     int retorno=-1;
@@ -80,7 +133,14 @@ int Venta_getFechaVenta(Venta* this,char* fechaVenta)
     }
     return retorno;
 }
-
+/** \brief setea codigo producto
+ *
+ * \param this Venta* Puntero a la venta
+ * \param codigoproducti char* puntero a codigoproducto
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_setCodigoProducto(Venta* this,char* codigoProducto)
 {
     int retorno=-1;
@@ -92,6 +152,14 @@ int Venta_setCodigoProducto(Venta* this,char* codigoProducto)
     return retorno;
 }
 
+/** \brief obtengo codigoProducto
+ *
+ * \param this Venta* Puntero a la venta
+ * \param codigoProducto char* puntero a codigoProducto
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_getCodigoProducto(Venta* this,char* codigoProducto)
 {
     int retorno=-1;
@@ -103,6 +171,14 @@ int Venta_getCodigoProducto(Venta* this,char* codigoProducto)
     return retorno;
 }
 
+/** \brief setea cantidad
+ *
+ * \param this Venta* Puntero a la venta
+ * \param cantidad char* puntero a cantidad
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_setCantidad(Venta* this,char* cantidad)
 {
     int retorno=-1;
@@ -116,6 +192,14 @@ int Venta_setCantidad(Venta* this,char* cantidad)
     return retorno;
 }
 
+/** \brief obtengo cantidad
+ *
+ * \param this Venta* Puntero a la venta
+ * \param cantidad char* puntero a cantidad
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_getCantidad(Venta* this,int* cantidad)
 {
     int retorno=-1;
@@ -126,7 +210,14 @@ int Venta_getCantidad(Venta* this,int* cantidad)
     }
     return retorno;
 }
-
+/** \brief setea precio unitario
+ *
+ * \param this Venta* Puntero a la venta
+ * \param precioUnitario char* puntero a precioUnitario
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_setPrecioUnitario(Venta* this,char* precioUnitario)
 {
     int retorno=-1;
@@ -140,6 +231,14 @@ int Venta_setPrecioUnitario(Venta* this,char* precioUnitario)
     return retorno;
 }
 
+/** \brief obtengo precioUnitario
+ *
+ * \param this Venta* Puntero a la venta
+ * \param preciounitario char* puntero a preciounitario
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_getPrecioUnitario(Venta* this,float* precioUnitario)
 {
     int retorno=-1;
@@ -150,7 +249,14 @@ int Venta_getPrecioUnitario(Venta* this,float* precioUnitario)
     }
     return retorno;
 }
-
+/** \brief setea cuitcliente
+ *
+ * \param this Venta* Puntero a la venta
+ * \param cuitcliente char* puntero a cuitcliente
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_setCuitCliente(Venta* this,char* cuitCliente)
 {
     int retorno=-1;
@@ -162,6 +268,14 @@ int Venta_setCuitCliente(Venta* this,char* cuitCliente)
     return retorno;
 }
 
+/** \brief obtengo cuit cliente
+ *
+ * \param this Venta* Puntero a la venta
+ * \param cuitcliente char* puntero a cuitcliente
+ * \return int* Retorna  (0) si tomo los datos correctamente
+                        ( -1) Si salio todo mal
+ *
+ */
 int Venta_getCuitCliente(Venta* this,char* cuitCliente)
 {
     int retorno=-1;
@@ -173,6 +287,13 @@ int Venta_getCuitCliente(Venta* this,char* cuitCliente)
     return retorno;
 }
 
+/** \brief obtengo la cantidad vendidas de la venta
+ *
+ * \param element Void* Puntero a void
+ * \return int* Retorna  cantidadVendidas
+
+ *
+ */
 int cantidadUnidadesVenta(void*element)
 {
     int cantidadVendidas=0;
@@ -183,6 +304,13 @@ int cantidadUnidadesVenta(void*element)
     return cantidadVendidas;
 }
 
+/** \brief calcula una venta por un monto mayor a 10000
+ *
+ * \param element Void* puntero a void
+ * \return int* Retorna  (1) si el monto supera 10000
+                        ( 0) Si el monto no supera a 10000
+ *
+ */
 int venta_montoMayor_a10000(void*element)
 {
     int retorno=0;
@@ -200,6 +328,13 @@ int venta_montoMayor_a10000(void*element)
     return retorno;
 }
 
+/** \brief calcula una venta por un monto mayor a 20000
+ *
+ * \param element Void* puntero a void
+ * \return int* Retorna  (1) si el monto supera 20000
+                        ( 0) Si el monto no supera a 20000
+ *
+ */
 int venta_montoMayor_a2000(void*element)
 {
     int retorno=0;
@@ -217,6 +352,13 @@ int venta_montoMayor_a2000(void*element)
     return retorno;
 }
 
+/** \brief calcula la cantidad de LCD_TV vendidas
+ *
+ * \param element Void* puntero a void
+ * \return int* Retorna  (cantidad) si codigo producto corresponde a LCD_TV
+                        ( 0) Si el codigo producto no corresponde a LCD_TV
+ *
+ */
 int cantidadtvlcdVendidas(void*element)
 {
     int retorno=0;
@@ -233,6 +375,13 @@ int cantidadtvlcdVendidas(void*element)
     return retorno;
 }
 
+/** \brief valida idventa
+ *
+ * \param id char* puntero a id
+ * \return int* Retorna  (0) si los datos son correctos
+                        ( -1) si los datos no son correctos
+ *
+ */
 int isvalidIDventa(char* id)
 {
    int retorno=-1;
@@ -248,6 +397,13 @@ int isvalidIDventa(char* id)
    return retorno;
 }
 
+/** \brief valida cantidad
+ *
+ * \param cantidad char* puntero a cantidad
+ * \return int* Retorna  (0) si los datos son correctos
+                        ( -1) si los datos no son correctos
+ *
+ */
 int isvalidCantidad(char* cantidad)
 {
    int retorno=-1;
@@ -263,6 +419,13 @@ int isvalidCantidad(char* cantidad)
    return retorno;
 }
 
+/** \brief valida precio
+ *
+ * \param precio char* puntero a precio
+ * \return int* Retorna  (0) si los datos son correctos
+                        ( -1) si los datos no son correctos
+ *
+ */
 int isvalidPrecio(char* precio)
 {
    int retorno=-1;
@@ -278,6 +441,13 @@ int isvalidPrecio(char* precio)
    return retorno;
 }
 
+/** \brief valida cuil
+ *
+ * \param cuil char* puntero a cuil
+ * \return int* Retorna  (0) si los datos son correctos
+                        ( -1) si los datos no son correctos
+ *
+ */
 int isvalidCuil(char* cuil)
 {
    int retorno=-1;
@@ -288,6 +458,13 @@ int isvalidCuil(char* cuil)
    return retorno;
 }
 
+/** \brief valida fecha
+ *
+ * \param fecha char* puntero a fecha
+ * \return int* Retorna  (0) si los datos son correctos
+                        ( -1) si los datos no son correctos
+ *
+ */
 int isvalidFecha(char*fecha)
 {
     int retorno=-1;
@@ -298,6 +475,13 @@ int isvalidFecha(char*fecha)
     return retorno;
 }
 
+/** \brief valida producto
+ *
+ * \param producto char* puntero a producto
+ * \return int* Retorna  (0) si los datos son correctos
+                        ( -1) si los datos no son correctos
+ *
+ */
 int isvalidProducto(char*producto)
 {
    int retorno;

@@ -3,6 +3,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Venta.h"
+
+/** \brief parsea un archivo de texto
+ *
+ * \param listaventas LinkedList* Puntero a la lista
+ * \param fileName char* puntero al nombre del archivo
+ * \return int Retorna  (0) Error si no pudo tomar los datos
+                        ( 1) Si tomo los datos del archivo correctamente
+ *
+ */
+
 int parser_parseVentas(char* fileName, LinkedList* listaVentas)
 {
     FILE*pFile;

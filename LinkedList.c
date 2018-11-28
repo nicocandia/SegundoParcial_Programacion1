@@ -574,6 +574,14 @@ int ll_sort(LinkedList* this, int (*pFunc)(void*,void*), int order)
 
 }
 
+/** \brief crea un linkedlist nuevo segun el criterio de la funcion pasada
+ *
+ * \param this LinkedList* Puntero al linkedlist
+ * \param pfun int puntero a una funcion
+ * \return Linkedlist* Retorna  (NULL) si datos son incorrectos
+                        (Linkedlist*) si los datos son correctos
+ *
+ */
 LinkedList* ll_filter(LinkedList*this,int (*pFunc)(void*))
 {
     int i;
@@ -596,6 +604,12 @@ LinkedList* ll_filter(LinkedList*this,int (*pFunc)(void*))
     return newList;
 }
 
+/** \brief comienza a iterar el linkedlist
+ *
+ * \param this LinkedList* Puntero al linkedlist
+ * \return void
+ *
+ */
 void ll_startIterator(LinkedList* this)
 {
     if(this != NULL)
@@ -603,7 +617,11 @@ void ll_startIterator(LinkedList* this)
         this->nodeIterator=this->pFirstNode;
     }
 }
-
+/** \brief obtiene el siguiente nodo a iterar de la linkedlist
+ *
+ * \param this LinkedList* Puntero al linkedlist
+ * \return void
+ */
 void ll_getNextIterator(LinkedList* this)
 {
     if(this->nodeIterator != NULL)
@@ -611,7 +629,14 @@ void ll_getNextIterator(LinkedList* this)
         this->nodeIterator=(this->nodeIterator)->pNextNode;
     }
 }
-
+/** \brief hace un mapeo con los elementos de la lista
+ *
+ * \param this LinkedList* Puntero al linkedlist
+ * \param pfun void puntero a una funcion
+ * \return int Retorna  (-1) si datos son incorrectos
+                        (0) si los datos son correctos
+ *
+ */
 int ll_map (LinkedList* this,void (*pFunc)(void*))
 {
     int retorno=-1;
@@ -627,6 +652,7 @@ int ll_map (LinkedList* this,void (*pFunc)(void*))
     return retorno;
 }
 
+/*
 LinkedList* ll_filterVersion2(LinkedList*this,int (*pFunc)(void*,int entero),int numero)
 {
     int i;
@@ -647,8 +673,15 @@ LinkedList* ll_filterVersion2(LinkedList*this,int (*pFunc)(void*,int entero),int
         }
     }
     return newList;
-}
+}*/
 
+/** \brief almacena en un acumulador el retorno de la funcion pasada como parametro
+ *
+ * \param this LinkedList* Puntero al linkedlist
+ * \param pfun int puntero a una funcion
+ * \return int Retorna  (acumulador) el acumulador que almacena el retorno de la funcion
+ *
+ */
 int ll_count (LinkedList* this,int (*fn)(void*element))
 {
     int acumulador=0;
